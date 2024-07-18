@@ -17,15 +17,10 @@
 
 克隆本项目，进入目录
 
-<code>
-mkdir build
-
-cd build
-
-cmake ..
-
-make
-</code>
+    mkdir build
+    cd build
+    cmake ..
+    make
 
 二进制文件会输出到build目录下,移动到上一级目录。
 
