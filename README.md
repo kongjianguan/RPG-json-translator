@@ -17,9 +17,14 @@
 
 克隆本项目，进入目录
 
-<code>chmod +x c.sh && sh c.sh</code>
+<code>
+mkdir build
+cd build
+cmake ..
+make
+</code>
 
-二进制文件会输出到bin目录下。
+二进制文件会输出到build目录下,移动到上一级目录。
 
 填写必要的配置项到tranconf.json
 
