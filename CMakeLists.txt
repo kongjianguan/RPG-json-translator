@@ -8,7 +8,7 @@ find_package(CURL REQUIRED)
 
 include_directories(${CURL_INCLUDE_DIRS})
 
-add_executable(RPGMaker-Json-Translator tran.cpp)
+add_executable(RPGMaker-Json-Translator src/tran.cpp)
 
 target_link_libraries(RPGMaker-Json-Translator CURL::libcurl )
 target_link_libraries(RPGMaker-Json-Translator crypto++)
