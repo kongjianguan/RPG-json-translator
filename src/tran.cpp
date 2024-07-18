@@ -445,70 +445,16 @@ void getconf(){
             exit(-1);
         }
     }
-    //cout<<config.GetString();
-    // char ch;
-    // string config;
-    // //string* allconfig[conf_count]
-    // while(ifs.get(ch)){
-        // if(ch==' ' || ch == '\n' || ch == '\r'){
-            // continue;
-        // }
-        // config+=ch;
-    // }
-    // cout<<"config="<<config<<endl;
-    // size_t po;
-    // po=config.find("threads=");
-    // if(po!=string::npos){
-        // cout<<config.substr(po+8,config.find(';',po)-po-8)<<endl;
-        // ThreadCount=stoi(config.substr(po+8,config.find(';',po)-po-8));
-    // }
-    // else {
-        // cerr<<"配置缺失";
-        // exit(-1);
-    // }
-    // po=config.find("qps=");
-    // if(po!=string::npos){
-        // cout<<config.substr(po+7,config.find(";",po)-po-7);
-        // maxlimit=stoi(config.substr(po+7,config.find(";",po)-po-7));
-    // }
-    // else {
-        // cerr<<"配置缺失";
-        // exit(-1);
-    // }
-    // po=config.find("appid=");
-    // if(po!=string::npos){
-        // cout<<config.substr(po+6,config.find(";",po)-po-6);
-        // appid=config.substr(po+6,config.find(";",po)-po-6);
-    // }
-    // else {
-        // cerr<<"配置缺失";
-        // exit(-1);
-    // }
-    // po=config.find("key=");
-    // if(po!=string::npos){
-        // cout<<config.substr(po+4,config.find(";",po)-po-4);
-        // key=config.substr(po+4,config.find(";",po)-po-4);
-    // }
-    // else {
-        // cerr<<"配置缺失";
-        // exit(-1);
-    // }
+    
 }
 
 
 int main(int argc, char *argv[])
 {
-    // myname=argv[0];
-    // myfullpath="./"+myname;
-    // thisargv=new char*[argc-1];
-    //  for(int i=0;i!=argc-1;++i){
-    //      thisargv[i]=new char[strlen(argv[i+1])+1];
-    //      strcpy(thisargv[i],argv[i+1]);
-    //  }
-    // thisargc=argc-1;
+    
     using namespace std::filesystem;
     getconf();
-    // check if path exists in command-line arguments
+    // check if path exists in command-line arguments ^
     for (int i = 0; i != argc; ++i)
     {
         if (i == (argc - 1))
@@ -573,15 +519,11 @@ int main(int argc, char *argv[])
             if (source_file.find(".json") != string::npos)
             {
                 cout << "processing " << source_file << endl;
-                // cin.get();
-                //     ./res/data
                 mainProcess(source_file);
-                //cout<<1<<endl;
-                // if(ifend==)
             }
         }
         else rf.close();
-        //logln("filesystem loop");
+
     }
     string js_path=file_path+"../js/plugins/";
     path jspath(js_path);

@@ -1,6 +1,6 @@
-# RPG Maker MV 游戏翻译
+# RPG Maker MV/MZ 游戏翻译
 
-基于我对一部分 RPG Maker MV 游戏的观察，我做出了这个简单的程序来将其翻译为中文。
+基于我对一部分 RPG Maker MV/MZ 游戏的观察，我做出了这个简单的程序来将其翻译为中文。
 
 # 缺陷
 
