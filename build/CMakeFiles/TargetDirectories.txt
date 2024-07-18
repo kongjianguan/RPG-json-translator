@@ -1,0 +1,3 @@
+/home/misaka/source/jsontran/release/build/CMakeFiles/RPGMaker-Json-Translator.dir
+/home/misaka/source/jsontran/release/build/CMakeFiles/edit_cache.dir
+/home/misaka/source/jsontran/release/build/CMakeFiles/rebuild_cache.dir

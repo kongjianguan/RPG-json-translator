@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic "CMakeFiles/RPGMaker-Json-Translator.dir/tran.cpp.o" -o RPGMaker-Json-Translator  /usr/lib/aarch64-linux-gnu/libcurl.so -lcrypto++ 
