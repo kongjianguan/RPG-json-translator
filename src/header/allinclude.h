@@ -183,8 +183,6 @@ string translator(string q)
     repl(q,R"(\)","-AKSDP-",1);
     repl(q,R"(\N)","-ANKKS",1);
     repl(q,":","-AMAOH-",1);
-    // repl(q,"——")
-
     }
     string ori=q;
     if(StorageCheck(ori)){
@@ -192,31 +190,9 @@ string translator(string q)
     }
     qpsWait();
     int i = 0;
-    // {
-        // lock_guard<mutex> lock(curlmtx);
-        // while (true)
-        // {
-            // if (*curlQueue[i] == 0)
-            // {
-                // *curlQueue[i] = 1;
-                // break;
-            // }
-            // if (i == (ThreadCount-1))
-            // {
-                // i = 0;
-                // this_thread::sleep_for(chrono::seconds(1));
-                // continue;
-            // }
-            // ++i;
-        // }
-    // }
-    // this_thread::sleep_for(chrono::seconds(1));
     string url, sign, strres, buffer;
     sign = domd5(appid + q + salt + key);
     url = weburl + "q=" + UrlEncode(q) + "&from=" + from + "&to=" + to + "&appid=" + appid + "&salt=" + salt + "&sign=" + sign;
-    // curlmtx.lock();
-    // CURL *curl;
-    //cout<<"url is "<<url<<endl;
     CURL* curl = curl_easy_init();
     if (curl)
     {
@@ -241,8 +217,6 @@ string translator(string q)
                 cout << strres << endl;
                 exit(-1);
             }
-            // cout<<"now the raw raw strres="<<strres<<endl;
-            // cin.get();
             po1 = strres.find("\"dst\":\"");
             size_t po2 = strres.find("\"", po1 + 7);
             strres = strres.substr(po1 + 7, po2 - po1 - 7);
@@ -253,19 +227,13 @@ string translator(string q)
             // cout<<"strres="<<strres<<endl;
             while (po1 != string::npos)
             {
-                // cout<<strres.substr(po1+2,4)<<endl;
-                // buffer=stoi(strres.substr(po1+2,4),nullptr,16);
-                // cout<<buffer<<endl;
-                // cin.get();
+
                 strres.replace(po1, 6, unicodeToString(strres.substr(po1 + 2, 4)));
                 // cout<<strres<<endl;
                 // cin.get();
                 po1 = strres.find("\\u");
             }
-            // cout << "the translated strres=" << strres << endl;
-            // cout << "the translated strres's HEX=" << std::hex<<*(unsigned int*)(strres.c_str()) <<std::dec<< endl;
-            // cin.get();
-            
+
             //Fix()对目前已发现的莫名其妙的错误进行修正
             Fix(ori,strres);
             StorageAdd(ori,strres);
