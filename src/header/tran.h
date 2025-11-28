@@ -128,20 +128,6 @@ string geterr(ifstream& ifs,size_t st){
 rapidjson::Document readJsonFile(const string &filename)
 {
     using namespace rapidjson;
-    // FILE* fp = fopen(filename.c_str(), "r"); // 非 Windows 平台使用 "r"
- 
-    // char readBuffer[65536];
-    // FileReadStream is(fp, readBuffer, sizeof(readBuffer));
- 
-    // Document root;
-    // root.ParseStream(is);
- 
-    // fclose(fp);
-    
-    
-    //为了处理莫名其妙的编码
-   // string command="echo $(cat -A \""+filename+"\")\"\\c\" > "+filename;
-//    system(command.c_str());
     FILE* fp = fopen(filename.c_str(), "r"); // 非 Windows 平台使用 "r"
  
     char readBuffer[65536];
@@ -151,48 +137,7 @@ rapidjson::Document readJsonFile(const string &filename)
     root.ParseStream(is);
  
     fclose(fp);
-    // ifstream ifs(filename);
-    // Document root;
-    // string strdoc;
-    // char ch;
-    // ifs.seekg(0,ios::end);
-    // bool ifinstr=false;
-    // size_t leng=;
-    // char* chdoc=new char[leng];
-    // leng=0;
-    // while(ifs.get(ch)){
-        // if(ch=='\"'){
-            // ifinstr=!ifinstr;
-        // }
-        // if((ch=='\n'||ch== ' ') && !ifinstr){
-            // continue;
-        // }
-        // *(chdoc+leng)=ch;
-        // ++leng;
-    // }
-    // root.ParseInsitu(chdoc);
-    // //4.把文件转变为json对象,数据写入root
-    // if(root.HasParseError()){
-        // cout<<filename+"解析错误\n"
-            // <<"位于偏移值 : "<<root.GetErrorOffset()<<endl
-            // <<"前文为 : "<<strdoc.substr(0,root.GetErrorOffset())<<endl
-            // <<"原因是 : "<<GetParseError_En(root.GetParseError())<<endl
-            // <<"strdoc="<<strdoc<<endl
-            // ;
-        // exit(-1);
-    // }
-    //5.返回存有数据的json，这个json对象已经能用了
     return root;
-    // FILE* fp = fopen(filename.c_str(), "r"); // 非 Windows 平台使用 "r"
- 
-    // char readBuffer[65536];
-    // FileReadStream is(fp, readBuffer, sizeof(readBuffer));
-     
-    // Document root;
-    // root.ParseStream(is);
-    
-    // fclose(fp);
-    // return root;
 }
     
 void writeJsonFile(const string & filename,const rapidjson::Document & root){
@@ -215,7 +160,7 @@ bool isjp(const string& str) {
     }
     return false;
 }
-//if打印日志
+//switch log
 bool iflog=false;
 
 void logln(string content){
